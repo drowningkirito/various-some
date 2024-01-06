@@ -7,7 +7,7 @@ def receive_messages():
     while True:
         try:
             message = socket_client.recv(1024).decode("utf-8")
-            chat_display.insert(tk.END, f"Server: {message}\n")
+            chat_display.insert(tk.END, f"{message}\n")
             chat_display.see(tk.END)  # Scroll to the end
         except ConnectionAbortedError:
             break
